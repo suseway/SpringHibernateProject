@@ -1,0 +1,19 @@
+#parse("/view/header.vm")
+
+	You are Welcome! PK is: $code
+
+	<br>
+	
+
+
+	<br>
+	<br>
+
+
+	<a class="btn btn-default" href="userslist.html">
+	Users
+	</a>
+
+
+</div><!-- /.panel-body -->
+#parse("/view/footer.vm")
