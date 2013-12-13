@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
@@ -22,8 +24,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import org.springframework.web.servlet.view.RedirectView;
+
 import com.portal.model.domain.Data;
-import com.portal.model.domain.DataService;
+import com.portal.model.service.DataService;
 
 @Controller
 @RequestMapping("/")
@@ -42,8 +45,6 @@ public class Main { //extends MultiActionController implements InitializingBean{
 	public String myHandler(Model model, @RequestParam(value = "user", required=false) String user,  @RequestParam(value = "password", required = false) String password,
 			  				HttpServletRequest request, HttpServletResponse response)  {
 
-		//String user = request.getParameter("user");
-		//String password = request.getParameter("password");
 	
 		logger.debug("Method index, name: " + request.getMethod());
 		logger.debug("Method index, user: " + user);
@@ -56,7 +57,7 @@ public class Main { //extends MultiActionController implements InitializingBean{
 			logger.debug("before getting data");
 			Data data=dataService.getLogin(user, password);
 			session.setAttribute("code", Integer.toString(data.getUsers().getCode()));
-			logger.debug("code "+data.getLogin());
+			logger.debug("code "+data.getUsers().getCode());
 			try {
 				response.sendRedirect("main.html");
 				//return "redirect:main.html";
@@ -86,7 +87,7 @@ public class Main { //extends MultiActionController implements InitializingBean{
 			response.sendRedirect("index.html");	
 		}
 		else {
-			model.addAttribute("code", "pk_code");
+			model.addAttribute("code", pk_code);
 		}
 		
 		return "main";

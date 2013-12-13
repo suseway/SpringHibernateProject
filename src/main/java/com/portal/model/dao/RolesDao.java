@@ -1,7 +1,14 @@
 package com.portal.model.dao;
-import java.util.List;
 
+import java.util.List;
 import com.portal.model.domain.Roles;
+
+/**
+ * 
+ * @author p.lepeev
+ * "roles" Table Business Object
+ *
+ */
 
 public interface RolesDao {
 

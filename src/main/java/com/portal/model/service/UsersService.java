@@ -1,13 +1,16 @@
-package com.portal.model.domain;
+package com.portal.model.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.portal.model.dao.UsersDao;
+import com.portal.model.domain.Users;
 
 @Service("usersService")
+@Transactional(readOnly = false) // do not role back this transaction
 public class UsersService {
     
     @Autowired
@@ -33,10 +36,12 @@ public class UsersService {
 		 return usersDaoImpl.saveUserscode(users);
 	 }
 	 
+     @Transactional(readOnly = true)
 	 public Users getUsers(int code) {
 		 return usersDaoImpl.getUsers(code);
 	 }
 	
+     @Transactional(readOnly = true)
 	 public List getAllUsers() {
 		 return usersDaoImpl.getAllUsers();
 	 }

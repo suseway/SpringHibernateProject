@@ -1,7 +1,14 @@
 package com.portal.model.dao;
-import java.util.List;
 
+import java.util.List;
 import com.portal.model.domain.Users;
+
+/**
+ * 
+ * @author p.lepeev
+ * "users" Table Business Object
+ *
+ */
 
 public interface UsersDao {
 

@@ -9,8 +9,14 @@ Multi-line comment here
 #end
 *#
 
-<form action="users.html" class="form-horizontal" role="form" method="post" name="formulario" id="formulario">
-
+<form action="users.html" commandName="UserData" class="form-horizontal" role="form" method="post" name="formulario" id="formulario">
+	
+	#*
+	<div class="form-group">
+		<form:errors path="phone" cssStyle="color : red;"/>
+	</div>
+	*#
+	
   	<div class="form-group">
 	    <label for="code" class="col-lg-2 control-label">Code</label>
 	    <div class="col-lg-10">
@@ -38,7 +44,7 @@ Multi-line comment here
 	<div class="form-group">
 	    <label for="rol" class="col-lg-2 control-label">Role</label>
 	    <div class="col-lg-10">
-			<select name="rol" class="form-control" style="width:175px">
+			<select name="role" class="form-control" style="width:175px">
 				#foreach ($list in $list_roles)
 					#if($userv.roles.id==$list.id)
 						<option value="$list.id" selected="selected">$list.name</option>
