@@ -1,0 +1,4 @@
+An example of Spring 3.x, HIbernate 4, Velocity, Bootstrap, PgSql project.  
+
+The "Examples" folder contains set of operations using Hibernate from standalone class BasicOperations.java
+
