@@ -1,12 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd
+	http://maven.apache.org/maven-v4_0_0.xsd">
+	
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>com.portal</groupId>
 	<artifactId>SpringHibernateProject</artifactId>
 	<version>1.0</version>
 	<name>SpringHibernateProject</name>
 	<packaging>war</packaging>
+	<url>http://maven.apache.org</url>
 
 	<properties>
 		<java-version>1.6</java-version>
@@ -391,21 +393,19 @@
 
 	<build>
 		<plugins>
-
+		
+			<!-- Maven Tomcat Plugin -->
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.2</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<configuration>
-							<webXml>src\main\webapp\WEB-INF\web.xml</webXml>
-						</configuration>
-					</execution>
-				</executions>
+    			<groupId>org.codehaus.mojo</groupId>
+    			<artifactId>tomcat-maven-plugin</artifactId>
+    			<configuration>
+	        		<url>http://127.0.0.1:8080/manager/text</url>
+        			<server>TomcatServer</server>
+        			<path>/SpringHibernateProject</path>
+    			</configuration>
 			</plugin>
-
+		
+			<!-- Maven compiler plugin -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.5.1</version>
@@ -415,51 +415,14 @@
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-
-				<!-- 
-					to copy all maven deps in webapp/lib folder.
-				-->
-				
-				<!-- 
-				 <execution>
-        			<id>copy-dependencies</id>
-        			<phase>package</phase>
-        			<goals>
-          				<goal>copy-dependencies</goal>
-        			</goals>
-        			<configuration>
-          				<outputDirectory>src/main/webapp/lib</outputDirectory>
-          				<overWriteReleases>false</overWriteReleases>
-          				<overWriteSnapshots>true</overWriteSnapshots>
-        			</configuration>
-      			</execution>
- 				-->				
-				
-				<execution>
-					<id>install</id>
-					<phase>install</phase>
-					<goals>
-						<goal>sources</goal>
-					</goals>
-				</execution>
-			
-				</executions>
-			</plugin>
-
+		
 		</plugins>
-		
-		
 		
 		<!-- This trick lets maven packaging all hibernate-mapping files 
 		     or
-		     copy hbm.xml -> src/main/java dir.
-		-->
+		     copy hbm.xml -> src/main/java dir. -->
 		
-		 <resources>
+		<resources>
     		<resource>
       			<directory>src/main/resources</directory>
     		</resource>
@@ -470,8 +433,6 @@
       				</excludes>
     		</resource>
   		</resources>
-		
-		
 		
 	</build>
 
