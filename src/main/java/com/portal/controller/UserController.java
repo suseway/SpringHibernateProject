@@ -42,7 +42,7 @@ import com.portal.model.service.UsersService;
 import org.springframework.web.bind.annotation.InitBinder;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UserController {
 	
 	@Autowired
@@ -72,7 +72,7 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(value="/userslist.html", method=RequestMethod.GET)  
+	@RequestMapping(value="/list.html", method=RequestMethod.GET)  
 	public String showUsersList(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception,ServletException {
 	
 		checkSession(request, response);
@@ -83,13 +83,13 @@ public class UserController {
 		List userslist = usersService.getAllUsers();
 		model.addAttribute("users_list", userslist);
 		
-		return "userslist";
+		return "user/list";
 		
     }
 	
 	
 	
-	@RequestMapping(value="/users.html", method = RequestMethod.GET)
+	@RequestMapping(value="/edit.html", method = RequestMethod.GET)
 	public String showUserForm(Model model, HttpServletRequest request, HttpServletResponse response,
 									 @RequestParam(value="uid", required=false) String request_user_id)
 											 throws Exception, ServletException {
@@ -122,14 +122,14 @@ public class UserController {
 		}
 		
 
-		return "users";
+		return "user/edit";
 	
 		
     }
 	
 	
 	
-	@RequestMapping(value="/users.html", method = RequestMethod.POST)
+	@RequestMapping(value="/save.html", method = RequestMethod.POST)
     public String editUserForm(Model model,
     						  @RequestParam(value="add", required=false) String form_add,
     						  @RequestParam(value="save", required=false) String form_save,
@@ -164,7 +164,7 @@ public class UserController {
 					
 				} else if (form_save != null) {
 				
-					usersService.updateUsers(user); // fro update
+					usersService.updateUsers(user); // for update
 			
 				}
 				
@@ -176,7 +176,7 @@ public class UserController {
 			
 	    }
 		
-		return "redirect:/userslist.html";
+		return "redirect:/user/list.html";
 		
 	}
 	

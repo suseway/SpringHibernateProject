@@ -24,7 +24,7 @@
       	<tr>
       		<td>$list.code</td><td>$list.name</td><td>$list.phone</td><td>$list.birth</td><td>$list.roles.name</td>
       		<td class="uaction">
-				<a class="btn btn-primary btn-xs" href="users.html?uid=$list.code">
+				<a class="btn btn-primary btn-xs" href="edit.html?uid=$list.code">
 				<span class="glyphicon glyphicon-edit"></span> Edit
 				</a>      	
 				<a class="btn btn-danger btn-xs disabled" href="#">
@@ -41,11 +41,11 @@
     <li class="list-group-item"></li>
     <li class="list-group-item">
 
-		<a class="btn btn-warning" href="main.html">
+		<a class="btn btn-warning" href="../main.html">
 		<span class="glyphicon glyphicon-arrow-left"></span> Back
 		</a>
 	
-		<a class="btn btn-primary" href="users.html">
+		<a class="btn btn-primary" href="edit.html">
 		<span class="glyphicon glyphicon-plus-sign"></span> Add User
 		</a>
     

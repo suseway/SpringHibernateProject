@@ -9,6 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.portal.model.dao.UsersDao;
 import com.portal.model.domain.Users;
 
+/**
+ * Users Service
+ * @author lepeev.pavel
+ */
+
 @Service("usersService")
 @Transactional(readOnly = false) // do not role back this transaction
 public class UsersService {

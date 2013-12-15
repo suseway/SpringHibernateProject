@@ -10,7 +10,7 @@
 	<br>
 
 
-	<a class="btn btn-default" href="userslist.html">
+	<a class="btn btn-default" href="user/list.html">
 	Users
 	</a>
 

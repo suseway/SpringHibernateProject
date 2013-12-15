@@ -8,6 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.portal.model.dao.DataDao;
 import com.portal.model.domain.Data;
  
+/**
+ * Data Service
+ * @author lepeev.pavel
+ */
+
 @Service("dataService")
 @Transactional(readOnly = false) // do not role back this transaction
 public class DataService {

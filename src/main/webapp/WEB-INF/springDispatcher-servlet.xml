@@ -36,9 +36,24 @@
     
 	<!-- <mvc:resources mapping="/resources/**" location="/js/" /> -->
 	
-	<mvc:annotation-driven/> 
+	
 
+
+	
+
+	<mvc:annotation-driven/>
+	 
+    <!-- Handles HTTP GET requests for /css/** by efficiently serving up static resources in the
+         ${webappRoot}/css directory -->
     
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+    
+	<mvc:resources mapping="/css/**" location="/res/css/" />
+	<mvc:resources mapping="/images/**" location="/res/images/" />
+	<mvc:resources mapping="/js/**" location="/res/js/" />
+	<mvc:resources mapping="/bootstrap/**" location="/res/bootstrap/" />
+	 
+	
 	<!-- 
   		This bean sets up the Velocity environment for us based on a root path for templates.
   		Optionally, a properties file can be specified for more control over the Velocity
@@ -70,6 +85,9 @@
 		<property name="exposeSpringMacroHelpers">
 			<value>false</value>
 		</property>
+		 
+		<property name="toolboxConfigLocation" value="/WEB-INF/toolbox.xml" />
+		  
 	</bean>    
 	
 	

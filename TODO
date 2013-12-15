@@ -1,4 +1,3 @@
- // for unknown reason tomcat starting time is about 35s
+ 
  // допилить как в примере, который я отправил в evernote.
  // правильная расстановкатегов в applicationContext.xml & springDispatcher-servlet.xml
- // пути в темплейте такие view/users/users.vm

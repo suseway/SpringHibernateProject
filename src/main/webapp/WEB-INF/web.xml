@@ -70,7 +70,18 @@
 	<servlet-mapping>
 		<servlet-name>springDispatcher</servlet-name>
 		<url-pattern>*.html</url-pattern>
+		
+		<url-pattern>*.js</url-pattern>
+		<url-pattern>*.css</url-pattern>
+		<url-pattern>*.ico</url-pattern>
+		<url-pattern>*.png</url-pattern>
+		<url-pattern>*.eot</url-pattern>
+		<url-pattern>*.svg</url-pattern>
+		<url-pattern>*.ttf</url-pattern>
+		<url-pattern>*.woff</url-pattern>
 	</servlet-mapping>
+	
+	
 	
 	<!-- 
 	<servlet-mapping>
