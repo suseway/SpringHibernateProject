@@ -1,6 +1,7 @@
 #parse("/view/header.vm")
 
-	You are Welcome! PK is: $code
+
+	You are Welcome! Your login is: $username
 
 	<br>
 	

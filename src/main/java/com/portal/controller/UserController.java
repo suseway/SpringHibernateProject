@@ -180,6 +180,30 @@ public class UserController {
 		
 	}
 	
+	@RequestMapping(value="/delete.html", method = RequestMethod.GET)
+	public String deleteUser(Model model, HttpServletRequest request, HttpServletResponse response,
+									 @RequestParam(value="uid", required=false) String request_user_id)
+											 throws Exception, ServletException
+	{
+		
+		
+		checkSession(request, response);
+		
+		Users user=new Users();
+		
+		if (request_user_id != null) {
+			
+			int code=Integer.parseInt(request_user_id);
+			
+			user = usersService.getUsers(code);
+
+			usersService.deleteUsers(user);
+			
+		}
+	
+		return "redirect:/user/list.html";
+	}
+	
 	public void checkSession(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session=request.getSession(true);
 		String pk_code = (String) session.getAttribute("code");

@@ -5,17 +5,26 @@
         <!-- <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p> -->
 		<!-- <div class="alert alert-success">Well done! You successfully read this important alert message.</div> -->
 		<div class="login-form">
-		<form action="index.html" class="form-horizontal" role="form" method="post" name="formulario" id="formulario">
+		
+		#if ( $loginerror!="" )
+			<div class="alert alert-error">
+			<a class="close" data-dismiss="alert">x</a>  
+			<spring:message code="$loginerror" />
+			Your login attempt was not successful, try again.<br /> Caused : $SPRING_SECURITY_LAST_EXCEPTION.message
+			</div>
+		#end
+		
+		<form action="j_spring_security_check" class="form-horizontal" role="form" method="post" name="formulario" id="formulario">
 			<div class="form-group">
     			<label for="user" class="col-lg-2 control-label">Login</label>  							<!-- for equals id of below input -->
     			<div class="col-lg-10">
-      				<input type="text" class="form-control" placeholder="Login" name="user" id="user"/>
+      				<input type="text" class="form-control" placeholder="Login" name="j_username" id="user"/>
     			</div>
   			</div>
 			<div class="form-group">
     			<label for="password" class="col-lg-2 control-label">Password</label>  						<!-- for equals id of below input -->
     			<div class="col-lg-10">
-      				<input type="password" class="form-control" placeholder="Password" name="password" id="password"/>
+      				<input type="password" class="form-control" placeholder="Password" name="j_password" id="password"/>
     			</div>
   			</div>  
   			<!-- 			

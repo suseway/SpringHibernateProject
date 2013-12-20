@@ -46,7 +46,7 @@
 		
 		<p class="divalignright">
 			#if ($panel_title)
-				<a class="btn btn-default" href="$root/leave.html">
+				<a class="btn btn-default" href="$root/j_spring_security_logout">
   				<span class="glyphicon glyphicon-log-out"></span> Exit
   				</a>
   			#end	    

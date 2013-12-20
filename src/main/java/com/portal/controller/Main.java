@@ -15,6 +15,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -40,19 +41,35 @@ public class Main { //extends MultiActionController implements InitializingBean{
 	public Main() {
 		// TODO Auto-generated constructor stub
 	}
+
+
 	
 	@RequestMapping(value="/index.html", method = { RequestMethod.GET, RequestMethod.POST })
-	public String myHandler(Model model, @RequestParam(value = "user", required=false) String user,  @RequestParam(value = "password", required = false) String password,
-			  				HttpServletRequest request, HttpServletResponse response)  {
+	public String myHandler(Model model, //@RequestParam(value = "user", required=false) String user,
+										 //@RequestParam(value = "password", required = false) String password,
+										 @RequestParam(value = "error", required = false) boolean error
+										 //HttpServletRequest request, HttpServletResponse response
+										 ) {
 
 	
-		logger.debug("Method index, name: " + request.getMethod());
-		logger.debug("Method index, user: " + user);
-		logger.debug("Method index, password: " + password);
+		//logger.debug("Method index, name: " + request.getMethod());
+		//logger.debug("Method index, user: " + user);
+		//logger.debug("Method index, password: " + password);
 		
-		HttpSession session=request.getSession(true);
+		if (error == true) {
+			// Assign an error message
+			logger.debug("##################### login error");
+			model.addAttribute("loginerror", "You have entered an invalid username or password!");
+		} else {
+			model.addAttribute("loginerror", "");
+
+		}
+		
+		
+		//HttpSession session=request.getSession(true);
 
 		model.addAttribute("page_title", "Login page");
+		/***
 		if (user!=null && password!=null) {
 			logger.debug("before getting data");
 			Data data=dataService.getLogin(user, password);
@@ -67,7 +84,7 @@ public class Main { //extends MultiActionController implements InitializingBean{
 			}
 
 		}
-		 
+		***/ 
 		return "index";
     }
 	
@@ -76,11 +93,16 @@ public class Main { //extends MultiActionController implements InitializingBean{
 		
 		logger.debug("Method main, name: " + request.getMethod());
 		
-		HttpSession session=request.getSession(true);
+		 
+		Data user = (Data)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String name = user.getLogin();
+	
+		model.addAttribute("username", name);
+		
 		
 		model.addAttribute("page_title", "Main page");
 		model.addAttribute("panel_title", "Main page");
-		
+		/***
 		String pk_code = (String) session.getAttribute("code");
 		
 		if (pk_code==null) {
@@ -89,7 +111,7 @@ public class Main { //extends MultiActionController implements InitializingBean{
 		else {
 			model.addAttribute("code", pk_code);
 		}
-		
+		***/
 		return "main";
 		
     }
@@ -97,9 +119,10 @@ public class Main { //extends MultiActionController implements InitializingBean{
 	@RequestMapping(value="/leave.html", method=RequestMethod.GET)
 	public String exit(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		logger.debug("Method leave");
-		HttpSession session=request.getSession(true);
-		session.invalidate();
-		response.sendRedirect("main.html");
+		
+		//HttpSession session=request.getSession(true);
+		//session.invalidate();
+		//response.sendRedirect("main.html");
 		return "index";
     }
 	

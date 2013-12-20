@@ -14,6 +14,7 @@
 		<java-version>1.6</java-version>
 		
 		<spring.version>3.2.4.RELEASE</spring.version>
+		<spring.security.version>3.2.0.RC2</spring.security.version>
 		
 		<org.slf4j.version>1.5.8</org.slf4j.version>
 		
@@ -33,6 +34,13 @@
 			<id>lib</id>
 			<url>file://${project.basedir}/src/main/webapp/WEB-INF/lib</url>
 		</repository>
+		 
+		<repository>
+    		<id>mavenRepo</id>
+    		<name>SpringSecurity</name> 
+    		<url>http://repo.spring.io/milestone</url>
+		</repository>
+		
 
 	</repositories>
 
@@ -371,6 +379,26 @@
 			<version>3.0.1</version>
 			<scope>provided</scope>
 		</dependency>
+		
+			<!-- ********************************************************************** 
+			 ** 				Spring Security DEPENDENCIES 					 ** 
+			 ********************************************************************** -->
+		 
+		<dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
 		
 	</dependencies>
 

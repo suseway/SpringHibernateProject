@@ -27,7 +27,7 @@
 				<a class="btn btn-primary btn-xs" href="edit.html?uid=$list.code">
 				<span class="glyphicon glyphicon-edit"></span> Edit
 				</a>      	
-				<a class="btn btn-danger btn-xs disabled" href="#">
+				<a class="btn btn-danger btn-xs" href="delete.html?uid=$list.code">
 				<span class="glyphicon glyphicon-remove"></span> Remove
 				</a>    					
       		</td>
