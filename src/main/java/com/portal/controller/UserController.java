@@ -149,6 +149,7 @@ public class UserController {
 				user.setBirth(fuser.getBirth());
 				user.setLogin(fuser.getLogin());
 				user.setPassword(fuser.getPassword());
+				user.setEnabled(fuser.getEnabled());
 			
 				Roles roles=rolesService.getRoles(Integer.parseInt(request.getParameter("role")));
 				user.setRoles(roles);
