@@ -51,7 +51,7 @@
     <li class="list-group-item"></li>
     <li class="list-group-item">
 
-		<a class="btn btn-warning" href="../main.html">
+		<a class="btn btn-warning" href="/main.html">
 		<span class="glyphicon glyphicon-arrow-left"></span> Back
 		</a>
 	

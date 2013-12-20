@@ -7,15 +7,12 @@
 
 <http access-denied-page="/error403.html" auto-config="true">
 
-    <intercept-url pattern="/index*" access="ROLE_ANONYMOUS,ROLE_USER"/>
+    <intercept-url pattern="/index*" access="ROLE_ANONYMOUS"/>
 	<intercept-url pattern="/main*" access="ROLE_USER,ROLE_ADMIN"/>
 	<intercept-url pattern="/list*" access="ROLE_USER,ROLE_ADMIN"/>
-
-    <!-- 
-	<intercept-url pattern="/edit*" access="ROLE_ADMIN"/>
-	<intercept-url pattern="/save*" access="ROLE_ADMIN"/>
-	<intercept-url pattern="/delete*" access="ROLE_ADMIN"/>
-	-->
+    <intercept-url pattern="/user/edit*" access="ROLE_ADMIN"/>
+    <intercept-url pattern="/user/save*" access="ROLE_ADMIN"/>
+    <intercept-url pattern="/user/delete*" access="ROLE_ADMIN"/>
 	
 	<form-login login-page="/index.html"
 			    default-target-url="/main.html"

@@ -7,24 +7,24 @@
 
 #set( $root = $link.getContextPath() )
 
-	<script src="js/jquery.js" type="text/javascript"></script>
-	<script src="js/jquery.validate.js" type="text/javascript"></script>
-	<script src="js/validar.js" type="text/javascript"></script>
-	<link rel="shortcut icon" href="images/ico/favicon.png">
+	<script src="/js/jquery.js" type="text/javascript"></script>
+	<script src="/js/jquery.validate.js" type="text/javascript"></script>
+	<script src="/js/validar.js" type="text/javascript"></script>
+	<link rel="shortcut icon" href="/images/ico/favicon.png">
 
 	<!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom own styles -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
-    <link href="css/sticky-footer.css" rel="stylesheet">
+    <link href="/css/sticky-footer.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
+      <script src="/js/html5shiv.js"></script>
+      <script src="/js/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -46,7 +46,7 @@
 		
 		<p class="divalignright">
 			#if ($panel_title)
-				<a class="btn btn-default" href="leave.html">
+				<a class="btn btn-default" href="/leave.html">
   				<span class="glyphicon glyphicon-log-out"></span> Exit
   				</a>
   			#end	    
@@ -67,7 +67,7 @@
         		<b>$panel_title</b>
         		</div>
         		<div class="divalignright">
-        		<a class="close" href="leave.html" aria-hidden="true">&times;</a>
+        		<a class="close" href="/leave.html" aria-hidden="true">&times;</a>
         		</div>
         		<div style="clear: both;"></div>
         	</div>

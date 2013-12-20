@@ -73,10 +73,8 @@ public class UserController {
 	
 	
 	@RequestMapping(value="/list.html", method=RequestMethod.GET)  
-	public String showUsersList(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception,ServletException {
-	
-		checkSession(request, response);
-
+	public String showUsersList(Model model, HttpServletRequest request, HttpServletResponse response)
+	{
 		model.addAttribute("page_title", "List of users");
 		model.addAttribute("panel_title", "List of users");
 		
@@ -84,7 +82,6 @@ public class UserController {
 		model.addAttribute("users_list", userslist);
 		
 		return "user/list";
-		
     }
 	
 	
@@ -94,8 +91,6 @@ public class UserController {
 									 @RequestParam(value="uid", required=false) String request_user_id)
 											 throws Exception, ServletException {
 
-		checkSession(request, response);
-		
 		Users user=new Users();
 		user.setName("");
 		user.setPhone(0);
@@ -139,8 +134,6 @@ public class UserController {
     						  BindingResult result
     						  ) throws ParseException, IOException {
 		
-		checkSession(request, response);
-		
 		if (result.hasErrors()) {
 			
 			logger.error("Something happened during getting form attributes... Error: " + result.getAllErrors());
@@ -154,6 +147,8 @@ public class UserController {
 				user.setCode(fuser.getCode());
 				user.setPhone(fuser.getPhone());
 				user.setBirth(fuser.getBirth());
+				user.setLogin(fuser.getLogin());
+				user.setPassword(fuser.getPassword());
 			
 				Roles roles=rolesService.getRoles(Integer.parseInt(request.getParameter("role")));
 				user.setRoles(roles);
@@ -167,8 +162,6 @@ public class UserController {
 					usersService.updateUsers(user); // for update
 			
 				}
-				
-				
 				
 			}
 			
@@ -187,8 +180,6 @@ public class UserController {
 	{
 		
 		
-		checkSession(request, response);
-		
 		Users user=new Users();
 		
 		if (request_user_id != null) {
@@ -204,18 +195,5 @@ public class UserController {
 		return "redirect:/user/list.html";
 	}
 	
-	public void checkSession(HttpServletRequest request, HttpServletResponse response) {
-		HttpSession session=request.getSession(true);
-		String pk_code = (String) session.getAttribute("code");
-		if (pk_code==null) {
-			try {
-				response.sendRedirect("index.html");
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				logger.error("An error occured after redirection...");
-			}	
-		}
-	}
-
 	
 }
