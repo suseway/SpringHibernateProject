@@ -43,7 +43,6 @@
 	
 				 <!-- mapping files -->
 				 <!-- assuming that is the package with your hibernate entities -->
-        		<mapping resource="com/portal/model/domain/Data.hbm.xml"/>
         		<mapping resource="com/portal/model/domain/Roles.hbm.xml"/>
         		<mapping resource="com/portal/model/domain/Users.hbm.xml"/>
         		 

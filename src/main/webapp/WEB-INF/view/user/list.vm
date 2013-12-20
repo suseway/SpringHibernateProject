@@ -13,16 +13,26 @@
   <table class="table">
   	<thead>
       <th>#</th>
+      <th>Login</th>
+      <th>Password</th>
       <th>Name</th>
       <th>Phone</th>
       <th>Date</th>
       <th>Role</th>
+      <th>Enabled</th>
       <th></th>
     </thead>
     <tbody>
       #foreach ($list in $users_list)
       	<tr>
-      		<td>$list.code</td><td>$list.name</td><td>$list.phone</td><td>$list.birth</td><td>$list.roles.name</td>
+      		<td>$list.code</td>
+      		<td>$list.login</td>
+      		<td>$list.password</td>
+      		<td>$list.name</td>
+      		<td>$list.phone</td>
+      		<td>$list.birth</td>
+      		<td>$list.roles.name</td>
+      		<td>$list.enabled</td>
       		<td class="uaction">
 				<a class="btn btn-primary btn-xs" href="edit.html?uid=$list.code">
 				<span class="glyphicon glyphicon-edit"></span> Edit
