@@ -34,13 +34,6 @@
     <!--  Enabling Annotation based Transaction Management using @Transactional -->
     <tx:annotation-driven />
     
-	<!-- <mvc:resources mapping="/resources/**" location="/js/" /> -->
-	
-	
-
-
-	
-
 	<mvc:annotation-driven/>
 	 
     <!-- Handles HTTP GET requests for /css/** by efficiently serving up static resources in the
@@ -52,6 +45,8 @@
 	<mvc:resources mapping="/images/**" location="/images/" />
 	<mvc:resources mapping="/js/**" location="/js/" />
 	<mvc:resources mapping="/bootstrap/**" location="/bootstrap/" />
+	<mvc:resources mapping="/font-awesome/**" location="/font-awesome/" />
+	
 	
 	<!-- 
   		This bean sets up the Velocity environment for us based on a root path for templates.
@@ -85,8 +80,6 @@
 			<value>false</value>
 		</property>
 		 
-		<property name="toolboxConfigLocation" value="/WEB-INF/toolbox.xml" />
-		  
 	</bean>    
 	
 	

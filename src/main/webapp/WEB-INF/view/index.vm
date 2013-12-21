@@ -14,31 +14,26 @@
 		#end
 		
 		<form action="j_spring_security_check" class="form-horizontal" role="form" method="post" name="formulario" id="formulario">
+		
 			<div class="form-group">
-    			<label for="user" class="col-lg-2 control-label">Login</label>  							<!-- for equals id of below input -->
     			<div class="col-lg-10">
-      				<input type="text" class="form-control" placeholder="Login" name="j_username" id="user"/>
+					<div class="input-group">
+						<span class="input-group-addon"><i class="icon-user"></i></span>
+						<input type="text" class="form-control" placeholder="Login" name="j_username" id="user"/>
+					</div>
     			</div>
   			</div>
 			<div class="form-group">
-    			<label for="password" class="col-lg-2 control-label">Password</label>  						<!-- for equals id of below input -->
     			<div class="col-lg-10">
-      				<input type="password" class="form-control" placeholder="Password" name="j_password" id="password"/>
+					<div class="input-group">
+				        <span class="input-group-addon"><i class="icon-key"></i></span>
+				        <input type="password" class="form-control" placeholder="Password" name="j_password" id="password"/>
+					</div>
     			</div>
-  			</div>  
-  			<!-- 			
-  			<div class="form-group">
-    			<div class="col-lg-offset-2 col-lg-10">
-      			<div class="checkbox">
-        			<label>
-          				<input type="checkbox"> Remember me
-        			</label>
-      			</div>
-    			</div>
-  			</div>
-   			-->
-  			<div class="form-group">
-    			<div class="col-lg-offset-2 col-lg-10">
+  			</div>  	
+			
+			<div class="form-group">
+    			<div class="col-lg-10">
       				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> Sign in</button>
     			</div>
   			</div>  
