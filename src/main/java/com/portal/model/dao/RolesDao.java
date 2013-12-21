@@ -25,4 +25,5 @@ public interface RolesDao {
 	 Roles getRoles(int code); 				// return san object that matches code 
 	
 	 public abstract List getAllRoles();
+	 
 }

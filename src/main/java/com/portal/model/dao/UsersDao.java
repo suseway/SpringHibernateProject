@@ -25,4 +25,5 @@ public interface UsersDao {
 	 Users getUsers(int code); 				// return object that matches the received parameter code 
 	
 	 public abstract List getAllUsers();
+	 
 }

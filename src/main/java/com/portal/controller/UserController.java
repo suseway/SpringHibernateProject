@@ -1,23 +1,14 @@
 package com.portal.controller;
+
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Collection;
 import java.util.Date;
-import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import javassist.bytecode.Descriptor.Iterator;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -25,20 +16,13 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
-
-import com.portal.model.dao.RolesDao;
-import com.portal.model.dao.UsersDao;
 import com.portal.model.domain.Roles;
 import com.portal.model.domain.Users;
 import com.portal.model.service.RolesService;
 import com.portal.model.service.UsersService;
-
 import org.springframework.web.bind.annotation.InitBinder;
 
 @Controller
@@ -88,14 +72,17 @@ public class UserController {
 	
 	@RequestMapping(value="/edit.html", method = RequestMethod.GET)
 	public String showUserForm(Model model, HttpServletRequest request, HttpServletResponse response,
-									 @RequestParam(value="uid", required=false) String request_user_id)
-											 throws Exception, ServletException {
+							   @RequestParam(value="uid", required=false) String request_user_id)
+											 throws Exception, ServletException
+	{
 
 		Users user=new Users();
 		user.setName("");
 		user.setPhone(0);
 		user.setCode(0);
 		user.setBirth(new Date());
+		user.setLogin("");
+		user.setPassword("");
 		model.addAttribute("userv",  user);
 		model.addAttribute("list_roles",  rolesService.getAllRoles());
 		
@@ -116,9 +103,7 @@ public class UserController {
 			
 		}
 		
-
 		return "user/edit";
-	
 		
     }
 	
@@ -132,7 +117,8 @@ public class UserController {
     						  HttpServletRequest request, HttpServletResponse response,  
     						  @ModelAttribute(value="UserData") Users fuser,
     						  BindingResult result
-    						  ) throws ParseException, IOException {
+    						  ) throws ParseException, IOException
+    {
 		
 		if (result.hasErrors()) {
 			
@@ -166,8 +152,6 @@ public class UserController {
 				
 			}
 			
-
-			
 	    }
 		
 		return "redirect:/user/list.html";
@@ -195,6 +179,5 @@ public class UserController {
 	
 		return "redirect:/user/list.html";
 	}
-	
 	
 }
