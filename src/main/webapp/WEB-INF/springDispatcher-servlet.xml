@@ -79,6 +79,8 @@
 		<property name="exposeSpringMacroHelpers">
 			<value>false</value>
 		</property>
+		
+		<property name="toolboxConfigLocation" value="/WEB-INF/toolbox.xml" />
 		 
 	</bean>    
 	
