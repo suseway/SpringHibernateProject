@@ -23,6 +23,10 @@ table td.uaction {
 	text-align: right;
 }
 
+/* IE8 conatainer width fix */
+.container {
+	width:750px;
+}
 
 
 /* ---bootstrap navbar--- Generated with http://twitterbootstrap3navbars.w3masters.nl/ */

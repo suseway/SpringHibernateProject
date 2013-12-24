@@ -9,7 +9,7 @@
 
 	<script src="/js/jquery.js" type="text/javascript"></script>
 	<script src="/js/jquery.validate.js" type="text/javascript"></script>
-	<script src="/js/validar.js" type="text/javascript"></script>
+	<!--<script src="/js/validar.js" type="text/javascript"></script>-->
 	<link rel="shortcut icon" href="/images/ico/favicon.png">
 
 	<!-- Bootstrap core CSS -->
@@ -18,11 +18,14 @@
     <!-- Font awesome -->
     <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
 
+    <!-- Custom styles for this template --> 
+    <link href="/css/sticky-footer.css" rel="stylesheet">
+
+
     <!-- Custom own styles -->
     <link href="/css/style.css" rel="stylesheet">
     
-    <!-- Custom styles for this template -->
-    <link href="/css/sticky-footer.css" rel="stylesheet">
+    
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -44,7 +47,7 @@
 <div class="page-header">
 
 
-<nav class="navbar navbar-custom" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
 
 
 
