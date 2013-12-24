@@ -2,9 +2,12 @@ package com.portal.model.domain;
 // Generated Dec 20, 2013 4:48:43 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,7 +22,10 @@ import javax.persistence.TemporalType;
 @Table(name = "users")
 public class Users implements java.io.Serializable {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int code;
+	
 	private Roles roles;
 	private String name;
 	private Integer phone;

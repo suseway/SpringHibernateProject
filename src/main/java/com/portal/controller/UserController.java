@@ -83,6 +83,8 @@ public class UserController {
 		user.setBirth(new Date());
 		user.setLogin("");
 		user.setPassword("");
+		user.setEnabled((short) 0);
+		
 		model.addAttribute("userv",  user);
 		model.addAttribute("list_roles",  rolesService.getAllRoles());
 		
@@ -130,22 +132,31 @@ public class UserController {
 			{
 				Users user=new Users();
 				user.setName(fuser.getName());
-				user.setCode(fuser.getCode());
 				user.setPhone(fuser.getPhone());
 				user.setBirth(fuser.getBirth());
 				user.setLogin(fuser.getLogin());
 				user.setPassword(fuser.getPassword());
-				user.setEnabled(fuser.getEnabled());
 			
+				if (request.getParameter("enabled") != null) {
+					    // checkbox was checked
+						user.setEnabled((short) 1);
+				} else {
+						user.setEnabled((short) 0);
+				}
+				
+				
 				Roles roles=rolesService.getRoles(Integer.parseInt(request.getParameter("role")));
 				user.setRoles(roles);
 	    	
 				if (form_add != null) {
 				
+					
 					usersService.saveUsers(user); // for save
 					
 				} else if (form_save != null) {
 				
+					user.setCode(fuser.getCode());
+					
 					usersService.updateUsers(user); // for update
 			
 				}

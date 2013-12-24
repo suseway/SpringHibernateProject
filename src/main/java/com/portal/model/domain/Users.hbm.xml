@@ -6,7 +6,7 @@
     <class name="com.portal.model.domain.Users" table="users">
         <id name="code" type="int">
             <column name="code" />
-            <generator class="assigned" />
+            <generator class="native" /> <!-- for id sequence -->
         </id>
         <many-to-one name="roles" class="com.portal.model.domain.Roles" fetch="select">
             <column name="codrol" />
