@@ -19,7 +19,7 @@
     			<div class="col-lg-10">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="icon-user"></i></span>
-						<input type="text" class="form-control" placeholder="Login" name="j_username" id="user"/>
+						<input type="text" class="form-control" style="width:275px" placeholder="Login" name="j_username" id="user"/>
 					</div>
     			</div>
   			</div>
@@ -27,7 +27,7 @@
     			<div class="col-lg-10">
 					<div class="input-group">
 				        <span class="input-group-addon"><i class="icon-key"></i></span>
-				        <input type="password" class="form-control" placeholder="Password" name="j_password" id="password"/>
+				        <input type="password" class="form-control" style="width:275px" placeholder="Password" name="j_password" id="password"/>
 					</div>
     			</div>
   			</div>  	

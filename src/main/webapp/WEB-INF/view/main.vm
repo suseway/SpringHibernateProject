@@ -1,14 +1,16 @@
 #parse("/view/header.vm")
 
 
-	You are Welcome! Your login is: $username</br>Click the below button to navigate to the Users page...
-
+	Signed in, as <b>$username</b>!
+	
 	<br>
 	<br>
 
+	<!--
 	<a class="btn btn-default" href="user/list.html">
 	Users
 	</a>
+	-->
 
 
 </div><!-- /.panel-body -->
