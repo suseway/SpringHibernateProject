@@ -31,6 +31,10 @@ public class Main {
 	@RequestMapping(value="", method = { RequestMethod.GET, RequestMethod.POST })
 	public String root()
 	{
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if (auth.isAuthenticated()) {
+			return "redirect:/main.html";
+		}
 		return "redirect:/index.html";
 	}
 	
