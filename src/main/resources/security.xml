@@ -22,7 +22,7 @@
 	
 	<anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>
 	
-	<!-- <remember-me/> -->
+	<remember-me key="myAppKey"/>
 </http>
 
 <authentication-manager>
