@@ -39,7 +39,7 @@ Multi-line comment here
   	<div class="form-group">
         <label for="password" class="col-lg-2 control-label">Password</label>
         <div class="col-lg-10">
-        <input type="text" class="form-control" name="password" id="password" placeholder="Password" value="$userv.password" style="width:175px">
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password" value="$userv.password" style="width:175px">
         </div>
     </div>      
   	<div class="form-group">
@@ -48,10 +48,11 @@ Multi-line comment here
       	<input type="text" class="form-control" name="name" id="name" placeholder="Name" value="$userv.name" style="width:175px">
     	</div>
   	</div>  	
+
   	<div class="form-group">
 	    <label for="birth" class="col-lg-2 control-label">Birth</label>
 	    <div class="col-lg-10">
-      	<input type="text" class="form-control" name="birth" id="birth" placeholder="Birth" value="$userv.birth" style="width:175px">
+      	<input type="text" class="form-control" name="birth" id="birth" placeholder="Birth" value="#if($userv.code == 0) $date.get('yyyy-MM-dd') #else $userv.birth #end" style="width:175px">
     	</div>
   	</div>  	
   	<div class="form-group">
