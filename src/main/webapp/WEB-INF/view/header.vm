@@ -7,9 +7,10 @@
 
 #set( $root = $link.getContextPath() )
 
-	<script src="/js/jquery.js" type="text/javascript"></script>
-	<script src="/js/jquery.validate.js" type="text/javascript"></script>
-	<!--<script src="/js/validar.js" type="text/javascript"></script>-->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/jquery.validate.js" type="text/javascript"></script>
+
 	<link rel="shortcut icon" href="/images/ico/favicon.png">
 
 	<!-- Bootstrap core CSS -->

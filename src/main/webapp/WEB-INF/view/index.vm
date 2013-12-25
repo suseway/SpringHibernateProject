@@ -11,6 +11,17 @@
 		  		<button type="button" class="close" data-dismiss="alert">&times;</button>
 		  		<strong>Your login attempt was not successful, try again.<br /> Caused : $SPRING_SECURITY_LAST_EXCEPTION.message
 		  	</div>
+
+		  	<script>
+		  	
+		  	$(function() {
+		  		
+		  		$("#boxBtn").effect( "shake", {times:2, distance:10}, 600 );
+
+		  	});
+		    	
+		    </script>
+		    
 		#end
 		
 		<form action="j_spring_security_check" class="form-horizontal" role="form" method="post" name="formulario" id="formulario">
@@ -42,7 +53,7 @@
 				</div>
 			</div>
   			
-			<div class="form-group">
+			<div id="boxBtn" class="form-group">
     			<div class="col-lg-10">
       				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> Sign in</button>
     			</div>
@@ -51,6 +62,7 @@
         </form>    
 		
 		</div>
+		
 
 </div><!-- /.panel-body -->		
 #parse("/view/footer.vm")
