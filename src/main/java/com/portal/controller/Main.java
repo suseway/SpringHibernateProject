@@ -77,4 +77,9 @@ public class Main {
 		return "index";
     }
 	
+	@RequestMapping(value="/error.html", method=RequestMethod.GET)
+	public String errorPage(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		return "error403";
+    }	
+	
 }
